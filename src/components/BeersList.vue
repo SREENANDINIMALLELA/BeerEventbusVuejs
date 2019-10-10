@@ -18,6 +18,7 @@ import ListItem from './ListItem.vue';
 export default {
   name: 'beers-list',
   props: ['beers'],
+
   components: {
     "list-item": ListItem
   }

@@ -19,7 +19,8 @@ export default {
   data(){
     return {
       beers: [],
-      selectedbeer: null
+      selectedbeer: null,
+      favouriteBeers: []
     };
   },
   mounted(){
@@ -29,14 +30,19 @@ export default {
     eventBus.$on('beer-selected',(beer)=> {
       this.selectedbeer=beer;
     })
+    eventBus.$on('fav-beers',(beer)=> {
+      debugger
+      console.log(beer);
+      this.favouriteBeers.push(beer)
+    })
   },
   components: {
     "beers-list": BeersList,
-    "beer-detail": BeerDetail,
+    "beer-detail": BeerDetail
+    },
+
   }
+  </script>
 
-}
-</script>
-
-<style lang="css" scoped>
-</style>
+  <style lang="css" scoped>
+  </style>
